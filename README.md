@@ -69,4 +69,10 @@ Alura +
 - <img src="https://www.youtube.com/s/desktop/a98f809d/img/favicon_32x32.png" width="20"> https://www.youtube.com/watch?v=EoPvlE85XAQ
 -->
 
-> Gian Franco Crova 2023
+> CONTACTO
+
+- <a href="https://www.linkedin.com/in/gian-crova/">LinkedIn</a> 
+- <a href="giancrova.cl5@gmail.com">Gmail</A>
+
+
+<b>Gian Franco Crova 2023</b>
