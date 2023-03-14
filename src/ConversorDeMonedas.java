@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 
 import java.awt.event.ActionListener;
 
-import javax.swing.AbstractButton;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
@@ -13,39 +12,67 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+import Monedas.Dolar;
+import Monedas.Euro;
+import Monedas.Libras;
+import Monedas.Pesos;
+import Monedas.WonSurcoreano;
+import Monedas.YenJapones;
+
 
 public class ConversorDeMonedas extends JFrame implements ActionListener{
 
 	private JLabel textCantidad, textSelect;
 	private JTextField cantidad;
+	private JButton botonConvertir, botonBack;
 	private JComboBox<String> select;
-	private JButton boton, botonBack;
 	private double amount, result;
-	private SeleccionDeConversion nueva;
+	private Dolar dolar;
+	private Euro euro;
+	private Libras libra;
+	private YenJapones yen;
+	private WonSurcoreano won;
+	private Pesos peso;
 	
 	public ConversorDeMonedas() {
 		setTitle("Conversor De Monedas - ChallengeONE");
-		getContentPane().setBackground(new java.awt.Color(0,112,255));
+		getContentPane().setBackground(new java.awt.Color(0,50,255));
 		getContentPane().setLayout(null);
-		((JComponent) getContentPane()).setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(95,158,160)));
+		((JComponent) getContentPane()).setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0,158,160)));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		iniciarComponentes();
-	};
-	
-	public void iniciarComponentes() {
-		Font myFont1 = new Font("sans-Serif", Font.BOLD, 16);
+		ingresarCantidad();
+		comboBox();
+		botonConvertir();
+		botonBack();
+		
+		this.dolar = new Dolar();
+		this.euro = new Euro();
+		this.libra = new Libras();
+		this.yen = new YenJapones();
+		this.won = new WonSurcoreano();
+		this.peso = new Pesos();
+	}
 
+	
+	public void ingresarCantidad() {
+		Font myFont1 = new Font("sans-Serif", Font.BOLD, 16);
 		textCantidad = new JLabel("Ingrese el monto $");
 		textCantidad.setBounds(50, -15, 200, 100);
-		textCantidad.setForeground(Color.WHITE);
+		textCantidad.setForeground(Color.GREEN.brighter());
 		textCantidad.setFont(myFont1);
 		
 		cantidad = new JTextField();
 		cantidad.setBounds(50, 50, 350, 20);
 		
+		add(textCantidad);
+		add(cantidad);
+	}
+	
+	public void comboBox() {
+		Font myFont1 = new Font("sans-Serif", Font.BOLD, 16);
 		textSelect = new JLabel("Seleccione la moneda a convertir");
 		textSelect.setBounds(50, 65, 350, 100);
-		textSelect.setForeground(Color.WHITE);
+		textSelect.setForeground(Color.GREEN.brighter());
 		textSelect.setFont(myFont1);
 		
 		select = new JComboBox<String>();
@@ -61,25 +88,34 @@ public class ConversorDeMonedas extends JFrame implements ActionListener{
 		select.addItem("De Yen Japonés A Pesos");
 		select.addItem("De Won Surcoreano A Pesos");
 		
-		boton = new JButton("Convertir");
-		boton.setBounds(230, 190, 150, 30);
-		boton.setFont(myFont1);
-		boton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-		boton.addActionListener(this);
+		add(textSelect);
+		add(select);
 		
+	}
+	
+	public void botonConvertir() {
+		Font myFont1 = new Font("sans-Serif", Font.BOLD, 16);
+		botonConvertir = new JButton("Convertir");
+		botonConvertir.setBounds(230, 190, 150, 30);
+		botonConvertir.setFont(myFont1);
+		botonConvertir.setBackground(Color.GREEN.brighter());
+		botonConvertir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+		botonConvertir.addActionListener(this);
+		
+		add(botonConvertir);
+	}
+	
+	public void botonBack() {
+		Font myFont1 = new Font("sans-Serif", Font.BOLD, 16);
 		botonBack = new JButton("Atras");
 		botonBack.setBounds(70, 190, 150, 30);
+		botonBack.setBackground(Color.GREEN.brighter());
 		botonBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 		botonBack.setFont(myFont1);
 		
-		getContentPane().add(textCantidad);
-		getContentPane().add(textSelect);
-		getContentPane().add(cantidad);
-		getContentPane().add(select);
-		getContentPane().add(boton);
-		getContentPane().add(botonBack);
+		add(botonBack);
 	}
-
+	
 	public void continuar() {
 		int respuesta = JOptionPane.showConfirmDialog(null, "¿Deseas realizar otra conversión?");
         if (JOptionPane.NO_OPTION == respuesta) {
@@ -90,67 +126,67 @@ public class ConversorDeMonedas extends JFrame implements ActionListener{
 	 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == boton) {
+		if(e.getSource() == botonConvertir) {
 			try {
 				switch (select.getSelectedItem().toString()) {
 				case "De Pesos A Dólares":
 					amount = Double.parseDouble(cantidad.getText());
-					result = amount * 0.005;
+					result = amount * dolar.getDolar();
 					JOptionPane.showMessageDialog(null, "Usted tiene: $" + String.format("%.3f", result) + " Dolares.");
 					continuar();
 					break;
 				case "De Pesos A Euros":
 					amount = Double.parseDouble(cantidad.getText());
-					result = amount * 0.004;
-					JOptionPane.showMessageDialog(null, String.format("%.2f", amount) + " Pesos equivalen a " + String.format("%.3f", result) + " Euros.");
+					result = amount * euro.getEuro();
+					JOptionPane.showMessageDialog(null, "Usted tiene: $" + String.format("%.3f", result) + " Euros.");
 					continuar();
 				break;
 				case "De Pesos A Libras":
 					amount = Double.parseDouble(cantidad.getText());
-					result = amount * 0.004;
-					JOptionPane.showMessageDialog(null, String.format("%.2f", amount) + " Pesos equivalen a " + String.format("%.3f", result) + " Libras Esterlinas.");
+					result = amount * libra.getLibra();
+					JOptionPane.showMessageDialog(null, "Usted tiene: $" + String.format("%.3f", result) + " Libras Esterlinas.");
 					continuar();
 				break;
 				case "De Pesos A Yen Japonés":
 					amount = Double.parseDouble(cantidad.getText());
-					result = amount * 0.67;
-					JOptionPane.showMessageDialog(null, String.format("%.2f", amount) + " Pesos equivalen a " + String.format("%.2f", result) + " Yen Japonés.");
+					result = amount * yen.getYen();
+					JOptionPane.showMessageDialog(null, "Usted tiene: $" + String.format("%.2f", result) + " Yen Japonés.");
 					continuar();
 				break;
 				case "De Pesos A Won Surcoreano":
 					amount = Double.parseDouble(cantidad.getText());
-					result = amount * 6.59;
-					JOptionPane.showMessageDialog(null, String.format("%.2f", amount) + " Pesos equivalen a " + String.format("%.2f", result) + " Won Surcoreano.");
+					result = amount * won.getWon();
+					JOptionPane.showMessageDialog(null, "Usted tiene: $" + String.format("%.2f", result) + " Won Surcoreano.");
 					continuar();
 				break;
 				case "De Dólares A Pesos":
 					amount = Double.parseDouble(cantidad.getText());
-					result = amount * 200.74;
-					JOptionPane.showMessageDialog(null, String.format("%.2f", amount) + " Dólares equivalen a " + String.format("%.2f", result) + " Pesos.");
+					result = amount * peso.getValorPesoEnDolar();
+					JOptionPane.showMessageDialog(null, "Usted tiene: $" + String.format("%.2f", result) + " Pesos.");
 					continuar();
 				break;
 				case "De Euros A Pesos":
 					amount = Double.parseDouble(cantidad.getText());
-					result = amount * 213.79;
-					JOptionPane.showMessageDialog(null, String.format("%.2f", amount) + " Euros equivalen a " + String.format("%.2f", result) + " Pesos.");
+					result = amount * peso.getValorPesoEnEuro();
+					JOptionPane.showMessageDialog(null, "Usted tiene: $" + String.format("%.2f", result) + " Pesos.");
 					continuar();
 				break;
 				case "De Libras A Pesos":
 					amount = Double.parseDouble(cantidad.getText());
-					result = amount * 241.54;
-					JOptionPane.showMessageDialog(null, String.format("%.2f", amount) + " Libras Esterlinas equivalen a " + String.format("%.2f", result) + " Pesos.");
+					result = amount * peso.getValorPesoEnLibra();
+					JOptionPane.showMessageDialog(null, "Usted tiene: $" + String.format("%.2f", result) + " Pesos.");
 					continuar();
 				break;
 				case "De Yen Japonés A Pesos":
 					amount = Double.parseDouble(cantidad.getText());
-					result = amount * 1.48;
-					JOptionPane.showMessageDialog(null, String.format("%.2f", amount) + " Yen Japonés equivalen a " + String.format("%.2f", result) + " Pesos.");
+					result = amount * peso.getValorPesoEnYen();
+					JOptionPane.showMessageDialog(null, "Usted tiene: $" + String.format("%.2f", result) + " Pesos.");
 					continuar();
 				break;
 				case "De Won Surcoreano A Pesos":
 					amount = Double.parseDouble(cantidad.getText());
-					result = amount * 0.15;
-					JOptionPane.showMessageDialog(null, String.format("%.2f", amount) + " Won Surcoreanos equivalen a " + String.format("%.2f", result) + " Pesos.");
+					result = amount * peso.getValorPesoEnWon();
+					JOptionPane.showMessageDialog(null, "Usted tiene: $" + String.format("%.2f", result) + " Pesos.");
 					continuar();
 				break;
 				}
@@ -160,7 +196,4 @@ public class ConversorDeMonedas extends JFrame implements ActionListener{
 			}
 		}
 	}
-
-	
-
 }
