@@ -37,4 +37,33 @@ Imágenes del Proyecto:
   <img src="https://user-images.githubusercontent.com/103906625/224913818-45bac018-3b46-44ee-9a8a-812bd7071b4a.png" width="405">
 </div><br>
 
+Algunos materiales de Alura (como cursos y artículos).
+
+Cursos
+
+- <img src="https://www.aluracursos.com/assets/favicon.1647533644.ico" width="20"> https://app.aluracursos.com/course/java-primeros-pasos
+- <img src="https://www.aluracursos.com/assets/favicon.1647533644.ico" width="20"> https://app.aluracursos.com/course/java-parte2-introduccion-orientada-objetos
+- <img src="https://www.aluracursos.com/assets/favicon.1647533644.ico" width="20"> https://app.aluracursos.com/course/java-parte-3-entendiendo-herencia-interfaces
+- <img src="https://www.aluracursos.com/assets/favicon.1647533644.ico" width="20"> https://app.aluracursos.com/course/java-excepciones
+- <img src="https://www.aluracursos.com/assets/favicon.1647533644.ico" width="20"> https://www.aluracursos.com/curso-online-java-util-coleciones-wrappers-lambda-expressions
+
+Artículos
+
+- <img src="https://www.aluracursos.com/assets/favicon.1647533644.ico" width="20"> https://www.aluracursos.com/blog/revisando-la-orientacion-a-objetos-encapsulacion-de-java
+- <img src="https://www.aluracursos.com/assets/favicon.1647533644.ico" width="20"> https://www.aluracursos.com/blog/poo-que-es-la-programacion-orientada-a-objetos
+- <img src="https://www.aluracursos.com/assets/favicon.1647533644.ico" width="20"> https://www.aluracursos.com/blog/como-no-aprender-java-y-orientacion-a-objetos-getters-y-setters
+- <img src="https://www.aluracursos.com/assets/favicon.1647533644.ico" width="20"> https://www.aluracursos.com/blog/aumentando-tu-productividad-con-el-eclipse
+- <img src="https://www.aluracursos.com/assets/favicon.1647533644.ico" width="20"> https://www.aluracursos.com/blog/verificar-si-es-letra-o-numero-en-java
+- <img src="https://www.aluracursos.com/assets/favicon.1647533644.ico" width="20"> https://www.aluracursos.com/blog/Importando-clases-en-java
+- <img src="https://www.aluracursos.com/assets/favicon.1647533644.ico" width="20"> https://www.aluracursos.com/blog/redondeo-y-numeros-gigantes-de-double-a-bigdecimal
+- <img src="https://www.aluracursos.com/assets/favicon.1647533644.ico" width="20"> https://www.aluracursos.com/blog/biblioteca-swing
+- <img src="https://www.aluracursos.com/assets/favicon.1647533644.ico" width="20"> https://www.aluracursos.com/blog/interfaces-graficas-con-eclipse-windowbuilder
+
+Alura +
+
+- <img src="https://www.youtube.com/s/desktop/a98f809d/img/favicon_32x32.png" width="20"> https://www.youtube.com/watch?v=3kNuK-XAHEY
+- <img src="https://www.youtube.com/s/desktop/a98f809d/img/favicon_32x32.png" width="20"> https://www.youtube.com/watch?v=LLt7FreeHfQ&t=1s
+- <img src="https://www.youtube.com/s/desktop/a98f809d/img/favicon_32x32.png" width="20"> https://www.youtube.com/watch?v=-LmFK6skG7s
+- <img src="https://www.youtube.com/s/desktop/a98f809d/img/favicon_32x32.png" width="20"> https://www.youtube.com/watch?v=EoPvlE85XAQ
+
 > Gian Franco Crova 2023
