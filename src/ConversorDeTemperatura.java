@@ -20,6 +20,7 @@ public class ConversorDeTemperatura extends JFrame implements ActionListener {
 	private JButton botonConvertir, botonBack;
 	private double amount, result;
 	private ConversorDeMonedas cdm;
+	private SeleccionDeConversion anterior;
 	
 	public ConversorDeTemperatura() {
 		setTitle("Conversor De Grados C° a F°");
@@ -87,6 +88,7 @@ public class ConversorDeTemperatura extends JFrame implements ActionListener {
 		botonBack.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(122,0,22)));
 		botonBack.setFont(new Font("Montserrat", Font.BOLD, 16));
 		botonBack.setBackground(Color.RED.darker());
+		botonBack.addActionListener(this);
 		
 		add(botonBack);
 	}
@@ -137,6 +139,14 @@ public class ConversorDeTemperatura extends JFrame implements ActionListener {
 			} catch(NumberFormatException e1) {
 				JOptionPane.showMessageDialog(null, "Ingresar un monto válido", "Error", JOptionPane.ERROR_MESSAGE);
 			}
+		}
+		if(e.getSource() == botonBack) {
+			this.anterior = new SeleccionDeConversion();
+			anterior.setBounds(0, 0, 350, 250);
+			anterior.setLayout(null);
+			anterior.setLocationRelativeTo(null);
+			anterior.setVisible(true);
+			this.dispose(); 
 		}
 	}
 }

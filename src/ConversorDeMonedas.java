@@ -33,6 +33,7 @@ public class ConversorDeMonedas extends JFrame implements ActionListener{
 	private YenJapones yen;
 	private WonSurcoreano won;
 	private Pesos peso;
+	private SeleccionDeConversion anterior;
 	
 	public ConversorDeMonedas() {
 		setTitle("Conversor De Monedas - ChallengeONE");
@@ -112,6 +113,7 @@ public class ConversorDeMonedas extends JFrame implements ActionListener{
 		botonBack.setBackground(Color.GREEN.brighter());
 		botonBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 		botonBack.setFont(myFont1);
+		botonBack.addActionListener(this);
 		
 		add(botonBack);
 	}
@@ -129,71 +131,78 @@ public class ConversorDeMonedas extends JFrame implements ActionListener{
 		if(e.getSource() == botonConvertir) {
 			try {
 				switch (select.getSelectedItem().toString()) {
-				case "De Pesos A Dólares":
-					amount = Double.parseDouble(cantidad.getText());
-					result = amount * dolar.getDolar();
-					JOptionPane.showMessageDialog(null, "Usted tiene: $" + String.format("%.3f", result) + " Dolares.");
-					continuar();
+					case "De Pesos A Dólares":
+						amount = Double.parseDouble(cantidad.getText());
+						result = amount * dolar.getDolar();
+						JOptionPane.showMessageDialog(null, "Usted tiene: $" + String.format("%.3f", result) + " Dolares.");
+						continuar();
+						break;
+					case "De Pesos A Euros":
+						amount = Double.parseDouble(cantidad.getText());
+						result = amount * euro.getEuro();
+						JOptionPane.showMessageDialog(null, "Usted tiene: $" + String.format("%.3f", result) + " Euros.");
+						continuar();
 					break;
-				case "De Pesos A Euros":
-					amount = Double.parseDouble(cantidad.getText());
-					result = amount * euro.getEuro();
-					JOptionPane.showMessageDialog(null, "Usted tiene: $" + String.format("%.3f", result) + " Euros.");
-					continuar();
-				break;
-				case "De Pesos A Libras":
-					amount = Double.parseDouble(cantidad.getText());
-					result = amount * libra.getLibra();
-					JOptionPane.showMessageDialog(null, "Usted tiene: $" + String.format("%.3f", result) + " Libras Esterlinas.");
-					continuar();
-				break;
-				case "De Pesos A Yen Japonés":
-					amount = Double.parseDouble(cantidad.getText());
-					result = amount * yen.getYen();
-					JOptionPane.showMessageDialog(null, "Usted tiene: $" + String.format("%.2f", result) + " Yen Japonés.");
-					continuar();
-				break;
-				case "De Pesos A Won Surcoreano":
-					amount = Double.parseDouble(cantidad.getText());
-					result = amount * won.getWon();
-					JOptionPane.showMessageDialog(null, "Usted tiene: $" + String.format("%.2f", result) + " Won Surcoreano.");
-					continuar();
-				break;
-				case "De Dólares A Pesos":
-					amount = Double.parseDouble(cantidad.getText());
-					result = amount * peso.getValorPesoEnDolar();
-					JOptionPane.showMessageDialog(null, "Usted tiene: $" + String.format("%.2f", result) + " Pesos.");
-					continuar();
-				break;
-				case "De Euros A Pesos":
-					amount = Double.parseDouble(cantidad.getText());
-					result = amount * peso.getValorPesoEnEuro();
-					JOptionPane.showMessageDialog(null, "Usted tiene: $" + String.format("%.2f", result) + " Pesos.");
-					continuar();
-				break;
-				case "De Libras A Pesos":
-					amount = Double.parseDouble(cantidad.getText());
-					result = amount * peso.getValorPesoEnLibra();
-					JOptionPane.showMessageDialog(null, "Usted tiene: $" + String.format("%.2f", result) + " Pesos.");
-					continuar();
-				break;
-				case "De Yen Japonés A Pesos":
-					amount = Double.parseDouble(cantidad.getText());
-					result = amount * peso.getValorPesoEnYen();
-					JOptionPane.showMessageDialog(null, "Usted tiene: $" + String.format("%.2f", result) + " Pesos.");
-					continuar();
-				break;
-				case "De Won Surcoreano A Pesos":
-					amount = Double.parseDouble(cantidad.getText());
-					result = amount * peso.getValorPesoEnWon();
-					JOptionPane.showMessageDialog(null, "Usted tiene: $" + String.format("%.2f", result) + " Pesos.");
-					continuar();
-				break;
+					case "De Pesos A Libras":
+						amount = Double.parseDouble(cantidad.getText());
+						result = amount * libra.getLibra();
+						JOptionPane.showMessageDialog(null, "Usted tiene: $" + String.format("%.3f", result) + " Libras Esterlinas.");
+						continuar();
+					break;
+					case "De Pesos A Yen Japonés":
+						amount = Double.parseDouble(cantidad.getText());
+						result = amount * yen.getYen();
+						JOptionPane.showMessageDialog(null, "Usted tiene: $" + String.format("%.2f", result) + " Yen Japonés.");
+						continuar();
+					break;
+					case "De Pesos A Won Surcoreano":
+						amount = Double.parseDouble(cantidad.getText());
+						result = amount * won.getWon();
+						JOptionPane.showMessageDialog(null, "Usted tiene: $" + String.format("%.2f", result) + " Won Surcoreano.");
+						continuar();
+					break;
+					case "De Dólares A Pesos":
+						amount = Double.parseDouble(cantidad.getText());
+						result = amount * peso.getValorPesoEnDolar();
+						JOptionPane.showMessageDialog(null, "Usted tiene: $" + String.format("%.2f", result) + " Pesos.");
+						continuar();
+					break;
+					case "De Euros A Pesos":
+						amount = Double.parseDouble(cantidad.getText());
+						result = amount * peso.getValorPesoEnEuro();
+						JOptionPane.showMessageDialog(null, "Usted tiene: $" + String.format("%.2f", result) + " Pesos.");
+						continuar();
+					break;
+					case "De Libras A Pesos":
+						amount = Double.parseDouble(cantidad.getText());
+						result = amount * peso.getValorPesoEnLibra();
+						JOptionPane.showMessageDialog(null, "Usted tiene: $" + String.format("%.2f", result) + " Pesos.");
+						continuar();
+					break;
+					case "De Yen Japonés A Pesos":
+						amount = Double.parseDouble(cantidad.getText());
+						result = amount * peso.getValorPesoEnYen();
+						JOptionPane.showMessageDialog(null, "Usted tiene: $" + String.format("%.2f", result) + " Pesos.");
+						continuar();
+					break;
+					case "De Won Surcoreano A Pesos":
+						amount = Double.parseDouble(cantidad.getText());
+						result = amount * peso.getValorPesoEnWon();
+						JOptionPane.showMessageDialog(null, "Usted tiene: $" + String.format("%.2f", result) + " Pesos.");
+						continuar();
+					break;
 				}
-				
 			} catch(NumberFormatException e1) {
 				JOptionPane.showMessageDialog(null, "Ingresar un monto válido", "Error", JOptionPane.ERROR_MESSAGE);
 			}
+		} 
+		if(e.getSource() == botonBack) {
+				this.anterior = new SeleccionDeConversion();
+				anterior.setBounds(0, 0, 350, 250);
+				anterior.setLayout(null);
+				anterior.setLocationRelativeTo(null);
+				anterior.setVisible(true);
+				this.dispose();  // Cierra la ventana actual
 		}
 	}
 }
