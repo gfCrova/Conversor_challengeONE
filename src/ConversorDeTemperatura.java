@@ -23,7 +23,7 @@ public class ConversorDeTemperatura extends JFrame implements ActionListener {
 	private SeleccionDeConversion anterior;
 	
 	public ConversorDeTemperatura() {
-		setTitle("Conversor De Grados C° a F°");
+		setTitle("Conversor De Temperatura");
 		getContentPane().setBackground(new java.awt.Color(255,203,164));
 		getContentPane().setLayout(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -102,37 +102,37 @@ public class ConversorDeTemperatura extends JFrame implements ActionListener {
 				case "De Farenheit A Celcius":
 					amount = Double.parseDouble(cantidad.getText());
 					result = (amount - 32) * 5/9;
-					JOptionPane.showMessageDialog(null, amount + " Grados Farenheit son:  \n" + String.format("%.3f", result) + " Grados Celcius", "Resultado", 3);
+					JOptionPane.showMessageDialog(null, amount + " Grados Farenheit son:  \n" + String.format("%.3f", result) + " Grados Celcius", "Resultado", 1);
 					cdm.continuar();
 					break;
 				case "De Farenheit A Kelvin":
 					amount = Double.parseDouble(cantidad.getText());
 					result = (amount - 32) * 5/9 + 273.15;
-					JOptionPane.showMessageDialog(null, amount + " Grados Farenheit son:  \n" + String.format("%.3f", result) + " Grados Kelvin");
+					JOptionPane.showMessageDialog(null, amount + " Grados Farenheit son:  \n" + String.format("%.3f", result) + " Grados Kelvin", "Resultado", 1);
 					cdm.continuar();
 					break;
 				case "De Celcius A Farenheit":
 					amount = Double.parseDouble(cantidad.getText());
 					result = amount * (9 / 5) + 32;
-					JOptionPane.showMessageDialog(null, amount + " Grados Celcius son:  \n" + String.format("%.2f", result) + " Grados Farenheit");
+					JOptionPane.showMessageDialog(null, amount + " Grados Celcius son:  \n" + String.format("%.2f", result) + " Grados Farenheit", "Resultado", 1);
 					cdm.continuar();
 					break;
 				case "De Celcius A Kelvin":
 					amount = Double.parseDouble(cantidad.getText());
 					result = amount + 273.15;
-					JOptionPane.showMessageDialog(null, amount + " Grados Celcius son:  \n" + String.format("%.2f", result) + " Grados Kelvin");
+					JOptionPane.showMessageDialog(null, amount + " Grados Celcius son:  \n" + String.format("%.2f", result) + " Grados Kelvin", "Resultado", 1);
 					cdm.continuar();
 					break;
 				case "De Kelvin A Farenheit":
 					amount = Double.parseDouble(cantidad.getText());
 					result = (amount - 273.15) * 5/9 + 32;
-					JOptionPane.showMessageDialog(null, amount + " Grados Kelvin son:  \n" + String.format("%.2f", result) + " Grados Farenheit");
+					JOptionPane.showMessageDialog(null, amount + " Grados Kelvin son:  \n" + String.format("%.2f", result) + " Grados Farenheit", "Resultado", 1);
 					cdm.continuar();
 					break;
 				case "De Kelvin A Celcius":
 					amount = Double.parseDouble(cantidad.getText());
 					result = amount - 273.15;
-					JOptionPane.showMessageDialog(null, amount + " Grados Kelvin son:  \n" + String.format("%.2f", result) + " Grados Celcius");
+					JOptionPane.showMessageDialog(null, amount + " Grados Kelvin son:  \n" + String.format("%.2f", result) + " Grados Celcius", "Resultado", 1);
 					cdm.continuar();
 					break;
 				}
