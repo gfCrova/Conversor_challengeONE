@@ -71,10 +71,12 @@ Alura +
 - <img src="https://www.youtube.com/s/desktop/a98f809d/img/favicon_32x32.png" width="20"> https://www.youtube.com/watch?v=EoPvlE85XAQ
 -->
 
-> CONTACTO
+> Contacto
 
-- <a href="https://www.linkedin.com/in/gian-crova/">LinkedIn</a> 
-- <a href="giancrova.cl5@gmail.com">Gmail</A>
+[![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/gian-crova/)
+[![gmail][gmail-shield]](mailto:giancrova.cl5@gmail.com)
 
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[gmail-shield]: https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white
 
 <b>Gian Franco Crova 2023</b>
