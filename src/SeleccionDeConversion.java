@@ -27,9 +27,9 @@ public class SeleccionDeConversion extends JFrame implements ActionListener {
 	
 	public SeleccionDeConversion() {
 		setTitle("Conversor");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        getContentPane().setBackground(Color.WHITE);
-        setVisible(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		getContentPane().setBackground(Color.WHITE);
+		setVisible(true);
 		setupComp();
 	}
 	
@@ -41,27 +41,27 @@ public class SeleccionDeConversion extends JFrame implements ActionListener {
 		select.addItem("Conversor de Temperatura");
 		select.setBounds(35, 75, 260, 30);
 		select.setFont(myFont1);
-        select.setAlignmentX(JComboBox.CENTER_ALIGNMENT);	
-        select.setCursor(handCursor);
-        add(select);
-        
-        botonContinuar = new JButton();
-        botonContinuar.setText("Continuar");
-        botonContinuar.setBounds(170, 155, 120, 30);
-        botonContinuar.setFont(myFont1);
-        botonContinuar.setBackground(Color.BLUE.darker());
-        botonContinuar.setForeground(Color.WHITE);
-        botonContinuar.setCursor(handCursor);
+		select.setAlignmentX(JComboBox.CENTER_ALIGNMENT);	
+		select.setCursor(handCursor);
+		add(select);
+
+		botonContinuar = new JButton();
+		botonContinuar.setText("Continuar");
+		botonContinuar.setBounds(170, 155, 120, 30);
+		botonContinuar.setFont(myFont1);
+		botonContinuar.setBackground(Color.BLUE.darker());
+		botonContinuar.setForeground(Color.WHITE);
+		botonContinuar.setCursor(handCursor);
 		botonContinuar.addActionListener(this);
 		add(botonContinuar);
 		
 		botonSalir = new JButton();
 		botonSalir.setText("Salir");
 		botonSalir.setBounds(40, 155, 120, 30);
-        botonSalir.setFont(myFont1);
-        botonSalir.setBackground(Color.BLUE.darker());
-        botonSalir.setForeground(Color.WHITE);
-        botonSalir.setCursor(handCursor);
+		botonSalir.setFont(myFont1);
+		botonSalir.setBackground(Color.BLUE.darker());
+		botonSalir.setForeground(Color.WHITE);
+		botonSalir.setCursor(handCursor);
 		botonSalir.addActionListener(this);
 		add(botonSalir);
 		
@@ -85,8 +85,8 @@ public class SeleccionDeConversion extends JFrame implements ActionListener {
 		       			cdm.setVisible(true);
 		                break;
 		            case "Conversor de Temperatura":
-		            	ConversorDeTemperatura cdt = new ConversorDeTemperatura();
-		            	cdt.setBounds(0, 0, 480, 300);
+					ConversorDeTemperatura cdt = new ConversorDeTemperatura();
+					cdt.setBounds(0, 0, 480, 300);
 		       			cdt.setLayout(null);
 		       			cdt.setLocationRelativeTo(null);
 		       			cdt.setResizable(false);
