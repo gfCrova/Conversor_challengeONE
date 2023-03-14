@@ -26,7 +26,9 @@ Recordando que también debe ser posible convertir inversamente, es decir:
 
 Imágenes del Proyecto:
 
-![img cdm](/assets/cdm.png)
+<div align="center">
+      <img src="/assets/cdm.png" width="50%">
+</div>
 
 <div>
   <img src="https://user-images.githubusercontent.com/103906625/224910071-4c8a9164-d572-443a-be41-924887c0d467.png" width="405">
