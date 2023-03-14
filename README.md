@@ -37,7 +37,7 @@ Imágenes del Proyecto:
   <img src="https://user-images.githubusercontent.com/103906625/224913818-45bac018-3b46-44ee-9a8a-812bd7071b4a.png" width="405">
 </div><br>
 
-Algunos materiales de Alura (como cursos y artículos).
+<!-- Algunos materiales de Alura (como cursos y artículos).
 
 Cursos
 
@@ -65,5 +65,6 @@ Alura +
 - <img src="https://www.youtube.com/s/desktop/a98f809d/img/favicon_32x32.png" width="20"> https://www.youtube.com/watch?v=LLt7FreeHfQ&t=1s
 - <img src="https://www.youtube.com/s/desktop/a98f809d/img/favicon_32x32.png" width="20"> https://www.youtube.com/watch?v=-LmFK6skG7s
 - <img src="https://www.youtube.com/s/desktop/a98f809d/img/favicon_32x32.png" width="20"> https://www.youtube.com/watch?v=EoPvlE85XAQ
+-->
 
 > Gian Franco Crova 2023
