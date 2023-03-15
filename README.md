@@ -33,9 +33,7 @@ Imágenes del Proyecto:
 <div>
   <img src="/assets/cdm.png" width="50%">
   <img src="https://user-images.githubusercontent.com/103906625/224910071-4c8a9164-d572-443a-be41-924887c0d467.png" width="405">
-  <!--<img src="https://user-images.githubusercontent.com/103906625/224910080-b844d173-c2a0-4b84-b485-c64e8c41bcb8.png" width="405">-->
   <img src="https://user-images.githubusercontent.com/103906625/224910548-77a04d1c-7e1c-43db-8765-60b198b1bb82.png" width="405">
-  <img src="https://user-images.githubusercontent.com/103906625/224910555-26c0ee71-5e68-4a1d-9fcf-f293e852a651.png" width="405">
   <img src="https://user-images.githubusercontent.com/103906625/224910612-539f6b6d-9fff-4a6f-9d0a-b9740cabb68b.png" width="405">
   <img src="https://user-images.githubusercontent.com/103906625/224910560-51d5d48f-d7ec-406c-af0e-9dafe6dea412.png" width="405">
   <img src="https://user-images.githubusercontent.com/103906625/224910567-c3fc3d2f-2ebe-4f9e-8229-060707909ca0.png" width="405">
